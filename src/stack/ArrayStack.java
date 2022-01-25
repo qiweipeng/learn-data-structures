@@ -72,7 +72,7 @@ public class ArrayStack<E> implements Stack<E> {
      */
     @Override
     public E peek() {
-        return array.getFirst();
+        return array.getLast();
     }
 
     @Override

@@ -52,8 +52,6 @@ public class MaxHeap<E extends Comparable<E>> {
      * 将任意一个数组生成为一个最大堆。
      * 如果将 n 个元素逐个插入到一个空堆中，复杂度是 O(nlogn) 级别的。
      * heapify 的过程，算法复杂度是 O(n) 级别的
-     * 
-     * @param arr
      */
     public MaxHeap(E[] arr) {
         data = new Array<>(arr);
@@ -64,8 +62,6 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 返回堆中元素个数。
-     * 
-     * @return
      */
     public int size() {
         return data.getSize();
@@ -73,8 +69,6 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 返回一个布尔值，表示堆是否为空。
-     * 
-     * @return
      */
     public boolean isEmpty() {
         return data.isEmpty();
@@ -82,9 +76,6 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 返回完全二叉树的数组表示中，一个索引所表示的元素的父亲节点的索引。
-     * 
-     * @param index
-     * @return
      */
     private int parent(int index) {
         if (index == 0) {
@@ -95,9 +86,6 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 返回完全二叉树的数组表示中，一个索引所表示的元素的左孩子节点的索引。
-     * 
-     * @param index
-     * @return
      */
     private int leftChild(int index) {
         return index * 2 + 1;
@@ -105,9 +93,6 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 返回完全二叉树的数组表示中，一个索引所表示的元素的左孩子节点的索引。
-     * 
-     * @param index
-     * @return
      */
     private int rightChild(int index) {
         return index * 2 + 2;
@@ -115,8 +100,6 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 向堆中添加元素
-     * 
-     * @param e
      */
     public void add(E e) {
         data.addLast(e);
@@ -138,8 +121,6 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 看堆中的最大元素，不取出。
-     * 
-     * @return
      */
     public E findMax() {
         if (data.getSize() == 0) {
@@ -150,10 +131,8 @@ public class MaxHeap<E extends Comparable<E>> {
     }
 
     /**
-     * 取出堆中最大元素。
+     * 取出堆中最大元素。复杂度 O(logn)
      * 对于堆来讲，我们只能拿最大堆也就是根节点，或者说数组索引为 0 的元素。
-     * 
-     * @return
      */
     public E extractMax() {
 
@@ -190,9 +169,6 @@ public class MaxHeap<E extends Comparable<E>> {
      * 取出堆中最大的元素，并且替换成元素 e
      * 正常情况下，这是两个操作，即先 extractMax，再 add，复杂度就是连续两个 O(logn)
      * 但是组合起来就可以直接用新元素替换旧元素，然后再 siftDown,复杂度就仅仅是 O(logn)
-     * 
-     * @param e
-     * @return
      */
     public E replace(E e) {
         E ret = findMax();

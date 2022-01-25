@@ -102,19 +102,19 @@ public class LinkedList<E> {
 
         // 如果为填表头添加元素需要特殊处理，那么我们可以使用为链表设立虚拟头节点的方式解决。
         // if (index == 0 ) {
-        // addFirst(e);
+        //     addFirst(e);
         // } else {
-        // Node prev = head;
-        // for (int i = 0; i < index - 1; i++) {
-        // prev = prev.next;
-        // }
+        //     Node prev = head;
+        //     for (int i = 0; i < index - 1; i++) {
+        //         prev = prev.next;
+        //     }
 
-        // // Node node = new Node(e);
-        // // node.next = prev.next;
-        // // prev.next = node;
-        // prev.next = new Node(e, prev.next);
+        //     // Node node = new Node(e);
+        //     // node.next = prev.next;
+        //     // prev.next = node;
+        //     prev.next = new Node(e, prev.next);
 
-        // size++;
+        //     size++;
         // }
 
         // 因为虚拟头节点的添加，我们不再需要 if-else
@@ -198,10 +198,10 @@ public class LinkedList<E> {
         Node cur = dummyHead.next;
 
         // for (int i = 0; i < size; i++) {
-        // if (cur.e.equals(e)) {
-        // return true;
-        // }
-        // cur = cur.next;
+        //     if (cur.e.equals(e)) {
+        //         return true;
+        //     }
+        //      cur = cur.next;
         // }
         // return false;
 
