@@ -6,13 +6,15 @@ import java.util.TreeMap;
  * Trie
  * 也叫字典树、前缀树。Trie 只处理字符串。
  * 
+ * 当我们通过搜索的方式查找字符串时，假设有 n 个条目，当使用线性结构时，查找复杂度为 O(n)；当使用树结构时，查找复杂度为 O(logn)，这个复杂度虽然已经很好了，但是它依然和数据量呈正相关，当数据量非常大时，查找速度依然会变慢。但是当使用 Trie 完成时，它可以做到查找速度和数据量无关，只和要查找的字符串长度有关。
+ * 
  * Trie 是一棵多叉树，比如要存储的字符串只包含 26 个小写字母，那么每个节点就最多包含 26 个叉。
  *                 root
  *              /    /   \
  *            a(*) c      h
  *            |    |      |
  *            t(*) a     i(*)
- *                / \
+ *                / \ 
  *             r(*) t(*)
  * 上面这个 Trie 一共存了 a、at、car、cat、hi 这几个单词，因为有些单词是其他单词的一部分，所以需要一个额外的布尔 isWord 来标记这个节点是否是一个单词。
  * 可以看到，查询的时候，不管这棵树中存多少个单词，查询的深度都是单词的长度，这就是 Trie 的优势。
@@ -50,12 +52,12 @@ public class Trie {
         size = 0;
     }
 
-    // 获得Trie中存储的单词数量
+    // 获得 Trie 中存储的单词数量
     public int getSize() {
         return size;
     }
 
-    // 向Trie中添加一个新的单词word
+    // 向 Trie 中添加一个新的单词 word
     public void add(String word) {
 
         Node cur = root;
@@ -72,7 +74,7 @@ public class Trie {
         }
     }
 
-    // 查询单词word是否在Trie中
+    // 查询单词 word 是否在 Trie 中
     public boolean contains(String word) {
 
         Node cur = root;
@@ -85,7 +87,7 @@ public class Trie {
         return cur.isWord;
     }
 
-    // 查询是否在Trie中有单词以prefix为前缀
+    // 查询是否在Trie中有单词以 prefix 为前缀
     public boolean isPrefix(String prefix) {
 
         Node cur = root;
