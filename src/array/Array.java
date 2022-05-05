@@ -299,7 +299,7 @@ public class Array<E> {
             throw new IllegalArgumentException("New capacity is Illegal.");
         }
 
-        E[] newData = (E[]) new Object[newCapacity]; 
+        E[] newData = (E[]) new Object[newCapacity];
 
         for (int i = 0; i < size; i++) {
             newData[i] = data[i];
